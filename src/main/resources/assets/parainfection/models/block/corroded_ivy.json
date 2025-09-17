@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "parainfection:block/corroded_ivy"
+  },
+  "render_type": "minecraft:translucent"
+}

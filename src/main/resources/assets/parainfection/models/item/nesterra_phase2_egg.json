@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "parainfection:item/nesterra_phase2_egg"
+  }
+}

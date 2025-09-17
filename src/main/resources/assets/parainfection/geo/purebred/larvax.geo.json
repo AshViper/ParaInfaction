@@ -1,0 +1,55 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.def",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 1.5,
+				"visible_bounds_offset": [0, 0.25, 0]
+			},
+			"bones": [
+				{
+					"name": "前",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [1, 0, -2], "size": [2, 4, 5], "pivot": [6, 2, 1], "rotation": [-30, 0, 0], "uv": [22, 22]},
+						{"origin": [1, 0, -3], "size": [2, 4, 5], "pivot": [6, 2, -1], "rotation": [30, 0, 0], "uv": [24, 11]}
+					]
+				},
+				{
+					"name": "sinn",
+					"pivot": [-6, 1, 0],
+					"cubes": [
+						{"origin": [-10, 0, -1], "size": [15, 2, 2], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "大",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-4, 1, -4], "size": [5, 4, 7], "pivot": [2, 2, -1], "rotation": [30, 0, 0], "uv": [0, 11]},
+						{"origin": [-4, 1, -2], "size": [5, 4, 6], "pivot": [2, 2, 2], "rotation": [-30, 0, 0], "uv": [0, 22]}
+					]
+				},
+				{
+					"name": "後ろ",
+					"pivot": [-1, 1, 0],
+					"cubes": [
+						{"origin": [-6, 0, -3], "size": [2, 4, 4], "pivot": [-1, 2, 0], "rotation": [30, 0, 0], "uv": [0, 32]},
+						{"origin": [-6, 0, -1], "size": [2, 4, 4], "pivot": [-1, 2, 0], "rotation": [-30, 0, 0], "uv": [22, 31]}
+					]
+				},
+				{
+					"name": "中軸",
+					"pivot": [-1, 1, 0],
+					"cubes": [
+						{"origin": [-7, 0, -2], "size": [11, 3, 4], "uv": [0, 4]}
+					]
+				}
+			]
+		}
+	]
+}

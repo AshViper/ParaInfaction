@@ -1,0 +1,42 @@
+{
+  "itemGroup.parainfection": "ParaInfection",
+
+  "item.parainfection.gnawling_egg": "Gnawling Spawn Egg",
+  "item.parainfection.larvax_egg": "Larvax Spawn Egg",
+  "item.parainfection.devora_egg": "Devora Spawn Egg",
+  "item.parainfection.incompletefield_egg": "Incomplete Field Spawn Egg",
+  "item.parainfection.corroded_cow_egg": "Corroded Cow Spawn Egg",
+  "item.parainfection.corroded_chiken_egg": "Corroded Chicken Spawn Egg",
+  "item.parainfection.corroded_sheep_egg": "Corroded Sheep Spawn Egg",
+  "item.parainfection.corroded_pig_egg": "Corroded Pig Spawn Egg",
+  "item.parainfection.corroded_zombie_egg": "Corroded Zombie Spawn Egg",
+  "item.parainfection.nesterra_phase1_egg": "Nesterra Phase1 Spawn Egg",
+  "item.parainfection.nesterra_phase2_egg": "Nesterra Phase2 Spawn Egg",
+  "item.parainfection.nesterra_phase3_egg": "Nesterra Phase3 Spawn Egg",
+  "item.parainfection.nesterra_phase4_egg": "Nesterra Phase4 Spawn Egg",
+  "item.parainfection.corroded_fragments": "Corroded Fragments",
+  "item.parainfection.corroded_exoskeleton": "Corroded Exoskeleton",
+  "item.parainfection.raid_block": "Raid Block",
+  "item.parainfection.mini_suiren": "Suiren",
+  "item.parainfection.corroded_bow": "Corroded Bow",
+  "item.parainfection.corroded_ingot": "Corroded Ingot",
+
+  "entity.parainfection.gnawling": "Gnawling",
+  "entity.parainfection.larvax": "Larvax",
+  "entity.parainfection.devora": "Devora",
+  "entity.parainfection.incompletefield": "Incomplete Field",
+  "entity.parainfection.corroded_cow": "Corroded Cow",
+  "entity.parainfection.corroded_chiken": "Corroded Chicken",
+  "entity.parainfection.corroded_sheep": "Corroded Sheep",
+  "entity.parainfection.corroded_pig": "Corroded Pig",
+  "entity.parainfection.corroded_zombie": "Corroded Zombie",
+  "entity.parainfection.nesterra_phase1": "Nesterra Phase1",
+  "entity.parainfection.nesterra_phase2": "Nesterra Phase2",
+  "entity.parainfection.nesterra_phase3": "Nesterra Phase3",
+  "entity.parainfection.nesterra_phase4": "Nesterra Phase4",
+
+  "block.parainfection.corroded_ground": "Corroded Ground",
+  "block.parainfection.raid_block": "Raid Block",
+
+  "effect.parainfection.infection": "Infection"
+}

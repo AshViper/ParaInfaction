@@ -1,0 +1,20 @@
+{
+  "parent": "item/bow",
+  "textures": {
+    "layer0": "parainfection:item/corroded_bow"
+  },
+  "overrides": [
+    {
+      "predicate": { "pulling": 1 },
+      "model": "parainfection:item/corroded_bow1"
+    },
+    {
+      "predicate": { "pulling": 1, "pull": 0.65 },
+      "model": "parainfection:item/corroded_bow2"
+    },
+    {
+      "predicate": { "pulling": 1, "pull": 0.9 },
+      "model": "parainfection:item/corroded_bow3"
+    }
+  ]
+}

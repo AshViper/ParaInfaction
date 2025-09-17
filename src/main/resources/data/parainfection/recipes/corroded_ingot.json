@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "parainfection:corroded_exoskeleton"
+  },
+  "result": "parainfection:corroded_ingot",
+  "experience": 0.7,
+  "cookingtime": 200
+}

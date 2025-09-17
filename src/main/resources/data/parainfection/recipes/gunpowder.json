@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "11",
+    "11"
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:flint"
+    }
+  },
+  "result": {
+    "item": "minecraft:gunpowder",
+    "count": 2
+  }
+}

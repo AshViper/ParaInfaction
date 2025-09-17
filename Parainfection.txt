@@ -1,0 +1,45 @@
+parainfection
+-Corroded-
+corroded_cow　　-修正要
+corroded_pig　　-修正要
+corroded_chiken　-済
+corroded_sheep　-修正要
+corroded_zombie　-済
+corroded_creeper
+corroded_skeleton
+corroded_creeper
+corroded_enderman
+corroded_villager
+
+-Developed-,-Adapted-
+developed_devora　　-修正要
+developed_infestule
+developed_mindleech
+developed_grubmaw
+developed_plaguelatch
+--一定数キルするとadaptedに変化
+adapted_devora
+adapted_infestule
+adapted_mindleech
+adapted_grubmaw
+adapted_plaguelatch
+
+-Purebred-
+larvax          --幼体　-済
+gnawling        --Larvaxの成長体　-済
+bloodcyst       --浸食に失敗した姿　4体集まるとdevelopedのどれかに変わる　　-済
+nesterra        --地面の浸食                --植物 lv1-4 lv1　-済
+wretchspawn     --Gnawlingを複数体召喚      --植物
+parasight       --遠距離射撃をメイン         --植物
+
+-absoluted-
+Egozym
+
+--実装アイテム
+腐食した断片
+腐食した外骨格
+剥がれ落ちた苔
+nesterraの葉
+
+--実装ブロック
+腐食した地面

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "parainfection:block/corroded_leaves"
+  },
+  "render_type": "minecraft:translucent"
+}

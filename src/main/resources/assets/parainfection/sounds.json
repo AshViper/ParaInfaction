@@ -1,0 +1,99 @@
+{
+  "phase1": {
+    "sounds": [
+      {
+        "name": "parainfection:phase1",
+        "stream": false
+      }
+    ]
+  },
+  "phase2": {
+    "sounds": [
+      {
+        "name": "parainfection:phase2",
+        "stream": false
+      }
+    ]
+  },
+  "phase3": {
+    "sounds": [
+      {
+        "name": "parainfection:phase3",
+        "stream": false
+      }
+    ]
+  },
+  "phase4": {
+    "sounds": [
+      {
+        "name": "parainfection:phase4",
+        "stream": false
+      }
+    ]
+  },
+  "phase5": {
+    "sounds": [
+      {
+        "name": "parainfection:phase5",
+        "stream": false
+      }
+    ]
+  },
+  "phase6": {
+    "sounds": [
+      {
+        "name": "parainfection:phase6",
+        "stream": false
+      }
+    ]
+  },
+  "phase7": {
+    "sounds": [
+      {
+        "name": "parainfection:phase7",
+        "stream": false
+      }
+    ]
+  },
+  "phase8": {
+    "sounds": [
+      {
+        "name": "parainfection:phase8",
+        "stream": false
+      }
+    ]
+  },
+  "phase9": {
+    "sounds": [
+      {
+        "name": "parainfection:phase9",
+        "stream": false
+      }
+    ]
+  },
+  "phase10": {
+    "sounds": [
+      {
+        "name": "parainfection:phase10",
+        "stream": false
+      }
+    ]
+  },
+  "gnawlingmeow": {
+    "sounds": [
+      {
+        "name": "parainfection:gnawlingmeow",
+        "stream": false
+      }
+    ]
+  },
+  "nesterra1spawn": {
+    "sounds": [
+      {
+        "name": "parainfection:nesterra1",
+        "stream": false
+      }
+    ]
+  }
+}
+

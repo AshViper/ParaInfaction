@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "323",
+    "212",
+    "323"
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:bow"
+    },
+    "2": {
+      "item": "parainfection:corroded_fragments"
+    },
+    "3": {
+      "item": "parainfection:corroded_exoskeleton"
+    }
+  },
+  "result": {
+    "item": "parainfection:corroded_bow",
+    "count": 1
+  }
+}
