@@ -1,6 +1,6 @@
 package com.ashviper.parainfection.event.client;
 
-import com.ashviper.parainfection.entity.ParainfectionEntities;
+import com.ashviper.parainfection.regi.ParaInfectionMobs;
 import com.ashviper.parainfection.entity.renderer.*;
 import com.ashviper.parainfection.entity.renderer.Corroded.*;
 import com.ashviper.parainfection.entity.renderer.Purebred.*;
@@ -32,19 +32,19 @@ public class ClientEvents {
                                 (stack.getUseDuration() - entity.getUseItemRemainingTicks()) / 20.0F;
                     }
                 });
-        EntityRenderers.register(ParainfectionEntities.GNAWLING.get(), GnawlingEntityRenderer::new);
-        EntityRenderers.register(ParainfectionEntities.LARVAX.get(), LarvaxEntityRenderer::new);
-        EntityRenderers.register(ParainfectionEntities.DEVORA.get(), DevoraEntityRenderer::new);
-        EntityRenderers.register(ParainfectionEntities.INCOMPLETEFIELD.get(), IncompletefieldRenderer::new);
-        EntityRenderers.register(ParainfectionEntities.CORRODEDCOW.get(), CorrodedCowEntityRenderer::new);
-        EntityRenderers.register(ParainfectionEntities.CORRODEDCHIKEN.get(), CorrodedChikenEntityRenderer::new);
-        EntityRenderers.register(ParainfectionEntities.CORRODEDSHEEP.get(), CorrodedSheepEntityRenderer::new);
-        EntityRenderers.register(ParainfectionEntities.CORRODEDPIG.get(), CorrodedPigEntityRenderer::new);
-        EntityRenderers.register(ParainfectionEntities.CORRODEDZOMBIE.get(), CorrodedZombieEntityRenderer::new);
-        EntityRenderers.register(ParainfectionEntities.CORRODEDCREEPER.get(), CorrodedCreeperEntityRenderer::new);
-        EntityRenderers.register(ParainfectionEntities.NESTERRA1.get(), Nesterra1EntityRenderer::new);
-        EntityRenderers.register(ParainfectionEntities.NESTERRA2.get(), Nesterra2EntityRenderer::new);
-        EntityRenderers.register(ParainfectionEntities.NESTERRA3.get(), Nesterra3EntityRenderer::new);
-        EntityRenderers.register(ParainfectionEntities.NESTERRA4.get(), Nesterra4EntityRenderer::new);
+        EntityRenderers.register(ParaInfectionMobs.GNAWLING.get(), GnawlingEntityRenderer::new);
+        EntityRenderers.register(ParaInfectionMobs.LARVAX.get(), LarvaxEntityRenderer::new);
+        EntityRenderers.register(ParaInfectionMobs.DEVORA.get(), DevoraEntityRenderer::new);
+        EntityRenderers.register(ParaInfectionMobs.INCOMPLETEFIELD.get(), IncompletefieldRenderer::new);
+        EntityRenderers.register(ParaInfectionMobs.CORRODEDCOW.get(), CorrodedCowEntityRenderer::new);
+        EntityRenderers.register(ParaInfectionMobs.CORRODEDCHIKEN.get(), CorrodedChikenEntityRenderer::new);
+        EntityRenderers.register(ParaInfectionMobs.CORRODEDSHEEP.get(), CorrodedSheepEntityRenderer::new);
+        EntityRenderers.register(ParaInfectionMobs.CORRODEDPIG.get(), CorrodedPigEntityRenderer::new);
+        EntityRenderers.register(ParaInfectionMobs.CORRODEDZOMBIE.get(), CorrodedZombieEntityRenderer::new);
+        EntityRenderers.register(ParaInfectionMobs.CORRODEDCREEPER.get(), CorrodedCreeperEntityRenderer::new);
+        EntityRenderers.register(ParaInfectionMobs.NESTERRA1.get(), Nesterra1EntityRenderer::new);
+        EntityRenderers.register(ParaInfectionMobs.NESTERRA2.get(), Nesterra2EntityRenderer::new);
+        EntityRenderers.register(ParaInfectionMobs.NESTERRA3.get(), Nesterra3EntityRenderer::new);
+        EntityRenderers.register(ParaInfectionMobs.NESTERRA4.get(), Nesterra4EntityRenderer::new);
     }
 }

@@ -1,6 +1,5 @@
-package com.ashviper.parainfection.entity;
+package com.ashviper.parainfection.regi;
 
-import com.ashviper.parainfection.regi.ModBlocks;
 import com.ashviper.parainfection.phase.PhasePointData;
 import com.ashviper.parainfection.phase.PhasePointStorage;
 import net.minecraft.core.BlockPos;
@@ -18,56 +17,56 @@ public class ParainfectionEntitySpawnPlacements {
 
     public static void register() {
         SpawnPlacements.register(
-                ParainfectionEntities.GNAWLING.get(),
+                ParaInfectionMobs.GNAWLING.get(),
                 SpawnPlacements.Type.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 ParainfectionEntitySpawnPlacements::canGnawlingSpawn
         );
 
         SpawnPlacements.register(
-                ParainfectionEntities.DEVORA.get(),
+                ParaInfectionMobs.DEVORA.get(),
                 SpawnPlacements.Type.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 ParainfectionEntitySpawnPlacements::canDevoraSpawn
         );
 
         SpawnPlacements.register(
-                ParainfectionEntities.CORRODEDCHIKEN.get(),
+                ParaInfectionMobs.CORRODEDCHIKEN.get(),
                 SpawnPlacements.Type.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 ParainfectionEntitySpawnPlacements::canCorrodedSpawn
         );
 
         SpawnPlacements.register(
-                ParainfectionEntities.CORRODEDSHEEP.get(),
+                ParaInfectionMobs.CORRODEDSHEEP.get(),
                 SpawnPlacements.Type.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 ParainfectionEntitySpawnPlacements::canCorrodedSpawn
         );
 
         SpawnPlacements.register(
-                ParainfectionEntities.CORRODEDCOW.get(),
+                ParaInfectionMobs.CORRODEDCOW.get(),
                 SpawnPlacements.Type.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 ParainfectionEntitySpawnPlacements::canCorrodedSpawn
         );
 
         SpawnPlacements.register(
-                ParainfectionEntities.CORRODEDPIG.get(),
+                ParaInfectionMobs.CORRODEDPIG.get(),
                 SpawnPlacements.Type.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 ParainfectionEntitySpawnPlacements::canCorrodedSpawn
         );
 
         SpawnPlacements.register(
-                ParainfectionEntities.CORRODEDZOMBIE.get(),
+                ParaInfectionMobs.CORRODEDZOMBIE.get(),
                 SpawnPlacements.Type.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 ParainfectionEntitySpawnPlacements::canCorrodedSpawn
         );
 
         SpawnPlacements.register(
-                ParainfectionEntities.LARVAX.get(),
+                ParaInfectionMobs.LARVAX.get(),
                 SpawnPlacements.Type.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 ParainfectionEntitySpawnPlacements::canLarvaxSpawn

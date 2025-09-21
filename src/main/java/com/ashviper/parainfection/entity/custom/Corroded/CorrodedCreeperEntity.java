@@ -1,7 +1,7 @@
 package com.ashviper.parainfection.entity.custom.Corroded;
 
-import com.ashviper.parainfection.entity.ParainfectionEntities;
 import com.ashviper.parainfection.entity.custom.Class.ParainfectionBaseEntity;
+import com.ashviper.parainfection.regi.ParaInfectionMobs;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -40,7 +40,7 @@ public class CorrodedCreeperEntity extends ParainfectionBaseEntity {
 
         // Mobを3体召喚（例としてゾンビ）
         for (int i = 0; i < 3; i++) {
-            Monster summoned = ParainfectionEntities.LARVAX.get().create(this.level());
+            Monster summoned = ParaInfectionMobs.LARVAX.get().create(this.level());
             if (summoned != null) {
                 summoned.moveTo(
                         this.getX() + this.random.nextGaussian(),

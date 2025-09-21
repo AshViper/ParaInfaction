@@ -394,8 +394,8 @@ java.lang.IllegalAccessException: class io.netty.util.internal.PlatformDependent
 [275月2025 18:45:55.198] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing software.bernie.example.GeckoLibMod to FORGE
 [275月2025 18:45:55.198] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing software.bernie.example.CommonListener to MOD
 [275月2025 18:45:55.199] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing software.bernie.example.ClientListener to MOD
-[275月2025 18:45:55.202] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.ashviper.parainfection.event.ParainfectionEventBusClientEvent to MOD
-[275月2025 18:45:55.206] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.ashviper.parainfection.event.ParainfectionEventBusEvent to MOD
+[275月2025 18:45:55.202] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.ashviper.parainfection.regi.ParainfectionEventBusClientEvent to MOD
+[275月2025 18:45:55.206] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.ashviper.parainfection.regi.ParainfectionEventBusEvent to MOD
 [275月2025 18:45:55.208] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.ashviper.parainfection.ParaInfectionMod$ModEvents to FORGE
 [275月2025 18:45:55.210] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.ashviper.parainfection.phase.PhaseTickHandler to FORGE
 [275月2025 18:45:55.210] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.ashviper.parainfection.regi.Provider.ModDataGenerator to MOD

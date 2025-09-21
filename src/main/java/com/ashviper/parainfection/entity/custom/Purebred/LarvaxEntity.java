@@ -1,6 +1,8 @@
 package com.ashviper.parainfection.entity.custom.Purebred;
 
-import com.ashviper.parainfection.entity.ParainfectionEntities;
+import com.ashviper.parainfection.phase.PhasePointData;
+import com.ashviper.parainfection.phase.PhasePointStorage;
+import com.ashviper.parainfection.regi.ParaInfectionMobs;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.EntityType;
@@ -46,17 +48,34 @@ public class LarvaxEntity extends Monster implements GeoEntity {
         this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));
     }
 
+    private static PhasePointData getPhaseData(Level level) {
+        if (level instanceof ServerLevel serverLevel) {
+            return PhasePointStorage.get(serverLevel);
+        }
+        return null;
+    }
+
     @Override
     public void tick() {
         super.tick();
 
-        if (!this.level().isClientSide && this.tickCount >= 3600) { // 約2分後
+        // サーバー側でのみフェーズデータを取得
+        PhasePointData data = getPhaseData(this.level());
+
+        // フェーズ2未満なら何もしない
+        if (data == null || data.getPhase() < 2) {
+            return;
+        }
+
+        // サーバー側でのみ実行、2分（3600tick）経過したら変身
+        if (!this.level().isClientSide && this.tickCount >= 3600) {
             transformToGnawling();
         }
     }
 
+
     private void transformToGnawling() {
-        var newEntity = ParainfectionEntities.GNAWLING.get().create(this.level());
+        var newEntity = ParaInfectionMobs.GNAWLING.get().create(this.level());
 
         if (newEntity != null) {
             newEntity.moveTo(this.getX(), this.getY(), this.getZ(), this.getYRot(), this.getXRot());

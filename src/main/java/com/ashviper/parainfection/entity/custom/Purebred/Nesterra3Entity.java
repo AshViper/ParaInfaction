@@ -1,8 +1,8 @@
 package com.ashviper.parainfection.entity.custom.Purebred;
 
-import com.ashviper.parainfection.entity.ParainfectionEntities;
 import com.ashviper.parainfection.entity.custom.Class.NesterraBaseEntity;
 import com.ashviper.parainfection.regi.ModSoundEvents;
+import com.ashviper.parainfection.regi.ParaInfectionMobs;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -48,11 +48,11 @@ public class Nesterra3Entity extends NesterraBaseEntity {
     @Override
     protected List<EntityType<? extends Monster>> getSummonMobTypes() {
         return List.of(
-                ParainfectionEntities.CORRODEDZOMBIE.get(),
-                ParainfectionEntities.CORRODEDCOW.get(),
-                ParainfectionEntities.CORRODEDCHIKEN.get(),
-                ParainfectionEntities.CORRODEDSHEEP.get(),
-                ParainfectionEntities.CORRODEDPIG.get()
+                ParaInfectionMobs.CORRODEDZOMBIE.get(),
+                ParaInfectionMobs.CORRODEDCOW.get(),
+                ParaInfectionMobs.CORRODEDCHIKEN.get(),
+                ParaInfectionMobs.CORRODEDSHEEP.get(),
+                ParaInfectionMobs.CORRODEDPIG.get()
         );
     }
 
@@ -72,7 +72,7 @@ public class Nesterra3Entity extends NesterraBaseEntity {
     }
 
     private void transformToPhaseUp() {
-        var newEntity = ParainfectionEntities.NESTERRA4.get().create(this.level());
+        var newEntity = ParaInfectionMobs.NESTERRA4.get().create(this.level());
 
         if (newEntity != null) {
             newEntity.moveTo(this.getX(), this.getY(), this.getZ(), this.getYRot(), this.getXRot());

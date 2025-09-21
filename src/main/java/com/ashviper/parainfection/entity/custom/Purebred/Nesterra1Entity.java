@@ -1,6 +1,6 @@
 package com.ashviper.parainfection.entity.custom.Purebred;
 
-import com.ashviper.parainfection.entity.ParainfectionEntities;
+import com.ashviper.parainfection.regi.ParaInfectionMobs;
 import com.ashviper.parainfection.entity.custom.Class.NesterraBaseEntity;
 import com.ashviper.parainfection.regi.ModSoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -49,7 +49,7 @@ public class Nesterra1Entity extends NesterraBaseEntity {
     @Override
     protected List<EntityType<? extends Monster>> getSummonMobTypes() {
         return List.of(
-                ParainfectionEntities.GNAWLING.get()
+                ParaInfectionMobs.GNAWLING.get()
         );
     }
 
@@ -69,7 +69,7 @@ public class Nesterra1Entity extends NesterraBaseEntity {
     }
 
     private void transformToPhaseUp() {
-        var newEntity = ParainfectionEntities.NESTERRA2.get().create(this.level());
+        var newEntity = ParaInfectionMobs.NESTERRA2.get().create(this.level());
 
         if (newEntity != null) {
             newEntity.moveTo(this.getX(), this.getY(), this.getZ(), this.getYRot(), this.getXRot());

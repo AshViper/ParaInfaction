@@ -1,8 +1,8 @@
 package com.ashviper.parainfection.entity.custom.Purebred;
 
-import com.ashviper.parainfection.entity.ParainfectionEntities;
 import com.ashviper.parainfection.entity.custom.Class.ParainfectionBaseEntity;
 import com.ashviper.parainfection.regi.ModSoundEvents;
+import com.ashviper.parainfection.regi.ParaInfectionMobs;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.EntityType;
@@ -52,7 +52,7 @@ public class GnawlingEntity extends ParainfectionBaseEntity {
     }
 
     private void transform() {
-        var newEntity = ParainfectionEntities.DEVORA.get().create(level());
+        var newEntity = ParaInfectionMobs.DEVORA.get().create(level());
         if (newEntity != null) {
             newEntity.moveTo(this.getX(), this.getY(), this.getZ(), this.getYRot(), this.getXRot());
             level().addFreshEntity(newEntity);

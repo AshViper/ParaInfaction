@@ -1,7 +1,8 @@
 package com.ashviper.parainfection.entity.custom.Purebred;
 
-import com.ashviper.parainfection.entity.ParainfectionEntities;
+
 import com.ashviper.parainfection.entity.custom.Class.NesterraBaseEntity;
+import com.ashviper.parainfection.regi.ParaInfectionMobs;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -31,11 +32,11 @@ public class Nesterra4Entity extends NesterraBaseEntity {
     @Override
     protected List<EntityType<? extends Monster>> getSummonMobTypes() {
         return List.of(
-                ParainfectionEntities.CORRODEDZOMBIE.get(),
-                ParainfectionEntities.CORRODEDCOW.get(),
-                ParainfectionEntities.CORRODEDCHIKEN.get(),
-                ParainfectionEntities.CORRODEDSHEEP.get(),
-                ParainfectionEntities.CORRODEDPIG.get()
+                ParaInfectionMobs.CORRODEDZOMBIE.get(),
+                ParaInfectionMobs.CORRODEDCOW.get(),
+                ParaInfectionMobs.CORRODEDCHIKEN.get(),
+                ParaInfectionMobs.CORRODEDSHEEP.get(),
+                ParaInfectionMobs.CORRODEDPIG.get()
         );
     }
 

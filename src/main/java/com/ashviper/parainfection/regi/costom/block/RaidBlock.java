@@ -1,8 +1,7 @@
 package com.ashviper.parainfection.regi.costom.block;
 
-import com.ashviper.parainfection.entity.ParainfectionEntities;
+import com.ashviper.parainfection.regi.ParaInfectionMobs;
 import com.ashviper.parainfection.entity.goal.BreakRaidBlockGoal;
-import com.ashviper.parainfection.regi.ModBlocks;
 import com.ashviper.parainfection.regi.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -209,28 +208,28 @@ public class RaidBlock extends Block {
         if (phase < 5) {
             int r = random.nextInt(3);
             return switch (r) {
-                case 0 -> ParainfectionEntities.CORRODEDCOW.get();
-                case 1 -> ParainfectionEntities.CORRODEDZOMBIE.get();
-                default -> ParainfectionEntities.GNAWLING.get();
+                case 0 -> ParaInfectionMobs.CORRODEDCOW.get();
+                case 1 -> ParaInfectionMobs.CORRODEDZOMBIE.get();
+                default -> ParaInfectionMobs.GNAWLING.get();
             };
         } else if (phase < 10) {
             int r = random.nextInt(5);
             return switch (r) {
-                case 0 -> ParainfectionEntities.CORRODEDCHIKEN.get();
-                case 1 -> ParainfectionEntities.CORRODEDZOMBIE.get();
-                case 2 -> ParainfectionEntities.CORRODEDCOW.get();
-                case 3 -> ParainfectionEntities.CORRODEDSHEEP.get();
-                default -> ParainfectionEntities.GNAWLING.get();
+                case 0 -> ParaInfectionMobs.CORRODEDCHIKEN.get();
+                case 1 -> ParaInfectionMobs.CORRODEDZOMBIE.get();
+                case 2 -> ParaInfectionMobs.CORRODEDCOW.get();
+                case 3 -> ParaInfectionMobs.CORRODEDSHEEP.get();
+                default -> ParaInfectionMobs.GNAWLING.get();
             };
         } else {
             int r = random.nextInt(6);
             return switch (r) {
-                case 0 -> ParainfectionEntities.CORRODEDCHIKEN.get();
-                case 1 -> ParainfectionEntities.CORRODEDZOMBIE.get();
-                case 2 -> ParainfectionEntities.CORRODEDCOW.get();
-                case 3 -> ParainfectionEntities.CORRODEDSHEEP.get();
-                case 4 -> ParainfectionEntities.CORRODEDPIG.get();
-                default -> ParainfectionEntities.GNAWLING.get();
+                case 0 -> ParaInfectionMobs.CORRODEDCHIKEN.get();
+                case 1 -> ParaInfectionMobs.CORRODEDZOMBIE.get();
+                case 2 -> ParaInfectionMobs.CORRODEDCOW.get();
+                case 3 -> ParaInfectionMobs.CORRODEDSHEEP.get();
+                case 4 -> ParaInfectionMobs.CORRODEDPIG.get();
+                default -> ParaInfectionMobs.GNAWLING.get();
             };
         }
     }

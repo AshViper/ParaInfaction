@@ -1,10 +1,13 @@
 package com.ashviper.parainfection.event;
 
+import com.ashviper.parainfection.ParaInfectionMod;
 import com.ashviper.parainfection.entity.custom.Class.ParainfectionBaseEntity;
+import com.ashviper.parainfection.phase.PhaseCommand;
 import com.ashviper.parainfection.regi.costom.block.RaidBlock;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
+import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
@@ -13,7 +16,7 @@ import net.minecraftforge.fml.common.Mod;
 
 import java.util.UUID;
 
-@Mod.EventBusSubscriber
+@Mod.EventBusSubscriber(modid = ParaInfectionMod.MODID)
 public class ModEvents {
     @SubscribeEvent
     public static void onLivingDrops(LivingDropsEvent event) {
@@ -33,6 +36,11 @@ public class ModEvents {
         for (ServerLevel level : event.getServer().getAllLevels()) {
             RaidBlock.tick(level);
         }
+    }
+
+    @SubscribeEvent
+    public static void onRegisterCommands(RegisterCommandsEvent event) {
+        PhaseCommand.register(event.getDispatcher());
     }
 
     @SubscribeEvent

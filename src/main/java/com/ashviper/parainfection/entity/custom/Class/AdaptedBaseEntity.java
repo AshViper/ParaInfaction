@@ -1,10 +1,11 @@
 package com.ashviper.parainfection.entity.custom.Class;
 
-import com.ashviper.parainfection.phase.PhasePointStorage;
-import com.ashviper.parainfection.regi.ParaInfectionMobs;
+import com.ashviper.parainfection.entity.custom.Purebred.GnawlingEntity;
+import com.ashviper.parainfection.entity.custom.Purebred.LarvaxEntity;
 import com.ashviper.parainfection.phase.PhasePointData;
 import com.ashviper.parainfection.regi.ModItems;
 import com.ashviper.parainfection.regi.ModSoundEvents;
+import com.ashviper.parainfection.regi.ParaInfectionMobs;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceLocation;
@@ -33,11 +34,11 @@ import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public abstract class ParainfectionBaseEntity extends Monster implements GeoEntity {
+public abstract class AdaptedBaseEntity extends Monster implements GeoEntity {
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
     int killCount = 0;
 
-    protected ParainfectionBaseEntity(EntityType<? extends Monster> type, Level level) {
+    protected AdaptedBaseEntity(EntityType<? extends Monster> type, Level level) {
         super(type, level);
     }
 
@@ -72,7 +73,7 @@ public abstract class ParainfectionBaseEntity extends Monster implements GeoEnti
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controller) {
         controller.add(new AnimationController<>(this, "mainController", 0, state -> {
-            ParainfectionBaseEntity entity = state.getAnimatable();
+            AdaptedBaseEntity entity = state.getAnimatable();
 
             if (entity.getDeltaMovement().horizontalDistanceSqr() > 1.0E-6) {
                 // 動いている → walk アニメーション
@@ -98,96 +99,42 @@ public abstract class ParainfectionBaseEntity extends Monster implements GeoEnti
         if (!this.level().isClientSide && killed instanceof LivingEntity) {
             killCount++;
 
-            // 10キルで INCOMPLETEFIELD に変身
-            if (killCount >= 10) {
-                if (this.level() instanceof ServerLevel serverLevel) {
-                    // 縮小＆爆発演出
-                    this.setDeltaMovement(0, 0, 0); // 動きを止める
-                    this.setNoGravity(true); // 重力無効
-                    this.setPos(this.getX(), this.getY(), this.getZ()); // 固定位置
+            if(killCount % 5 == 0){
+                    EntityType<GnawlingEntity> type = ParaInfectionMobs.GNAWLING.get();
 
-                    // 縮小用タイマー（サーバーでも少し演出）
+                    for (int i = 0; i < 5; i++) {
+                        GnawlingEntity newEntity = type.create(this.level());
+                        if (newEntity != null) {
+                            // 少しランダムで位置をずらす
+                            double offsetX = (this.random.nextDouble() - 0.5) * 2.0;
+                            double offsetZ = (this.random.nextDouble() - 0.5) * 2.0;
+                            newEntity.moveTo(killed.getX() + offsetX, killed.getY(), killed.getZ() + offsetZ,
+                                    this.random.nextFloat() * 360, 0);
+                            this.level().addFreshEntity(newEntity);
+                        }
+                    }
+                if (level() instanceof ServerLevel serverLevel) {
                     serverLevel.sendParticles(
                             ParticleTypes.EXPLOSION,
-                            this.getX(), this.getY() + 0.5, this.getZ(),
-                            20, 0.5, 0.5, 0.5, 0.1
+                            killed.getX() + 0.5, killed.getY() + 0.5, killed.getZ() + 0.5,
+                            1, 0, 0, 0, 0.01
                     );
-
-                    // 音も再生
-                    serverLevel.playSound(
-                            null,
-                            this.getX(), this.getY(), this.getZ(),
-                            ModSoundEvents.GNAWLINGMEOW.get(),
-                            SoundSource.HOSTILE,
-                            1.0F,
-                            1.0F
-                    );
-
-                    // 新しいエンティティをスポーン
-                    LivingEntity newEntity = ParaInfectionMobs.INCOMPLETEFIELD.get().create(this.level());
-                    if (newEntity != null) {
-                        newEntity.moveTo(this.getX(), this.getY(), this.getZ(), this.getYRot(), this.getXRot());
-                        this.level().addFreshEntity(newEntity);
-                    }
-
-                    // 元のエンティティを削除
-                    this.remove(RemovalReason.DISCARDED);
-                }
-                return; // 変身したら以下の召喚処理は行わない
-            }
-
-            // 通常の召喚処理（倒したMobに応じて）
-            EntityType<?> summonType = null;
-            if (killed.getType() == EntityType.COW || killed.getType() == EntityType.MOOSHROOM) {
-                summonType = ParaInfectionMobs.CORRODEDCOW.get();
-            } else if (killed.getType() == EntityType.SPIDER) {
-                summonType = ParaInfectionMobs.GNAWLING.get();
-            } else if (killed.getType() == EntityType.PIG) {
-                summonType = ParaInfectionMobs.CORRODEDPIG.get();
-            } else if (killed.getType() == EntityType.SHEEP) {
-                summonType = ParaInfectionMobs.CORRODEDSHEEP.get();
-            } else if (killed.getType() == EntityType.CHICKEN) {
-                summonType = ParaInfectionMobs.CORRODEDCHIKEN.get();
-            } else if (killed.getType() == EntityType.ZOMBIE) {
-                summonType = ParaInfectionMobs.CORRODEDZOMBIE.get();
-            } else {
-                summonType = ParaInfectionMobs.INCOMPLETEFIELD.get();
-            }
-
-            if (summonType != null) {
-                LivingEntity newEntity = (LivingEntity) summonType.create(this.level());
-                if (newEntity != null) {
-                    newEntity.moveTo(killed.getX(), killed.getY(), killed.getZ(), killed.getYRot(), 0);
-                    this.level().addFreshEntity(newEntity);
                 }
             }
-
             // 爆発パーティクル（見た目のみ）
-            if (level() instanceof ServerLevel serverLevel) {
-                serverLevel.sendParticles(
-                        ParticleTypes.EXPLOSION,
-                        killed.getX() + 0.5, killed.getY() + 0.5, killed.getZ() + 0.5,
-                        1, 0, 0, 0, 0.01
-                );
-            }
 
-            // PhasePointData にポイント加算
+
+            // === PhasePointData にポイントを加算 ===
             if (this.level() instanceof ServerLevel serverLevel) {
                 PhasePointData data = serverLevel.getDataStorage().computeIfAbsent(
                         PhasePointData::load,
                         PhasePointData::new,
                         "parainfection_phase"
                 );
-                data.addPoints(10.0f);
+
+                data.addPoints(20.0f); // ★ ここで加算するポイント量はお好みで
             }
         }
-    }
-
-    private static PhasePointData getPhaseData(Level level) {
-        if (level instanceof ServerLevel serverLevel) {
-            return PhasePointStorage.get(serverLevel);
-        }
-        return null;
     }
 
     @Override
@@ -195,12 +142,6 @@ public abstract class ParainfectionBaseEntity extends Monster implements GeoEnti
         super.die(source);
 
         if (!this.level().isClientSide) {
-            PhasePointData data = getPhaseData(this.level());
-
-            // フェーズ2未満なら何もしない
-            if (data == null || data.getPhase() < 1) {
-                return;
-            }
             RandomSource random = this.level().getRandom();
 
             // 30% の確率で召喚

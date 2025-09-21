@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "parainfection:block/acid_damage_ground"
+  }
+}

@@ -11,7 +11,7 @@ public class PhaseCommand {
 
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
         dispatcher.register(Commands.literal("phase")
-                .requires(source -> source.hasPermission(2)) // OP権限レベル2以上
+                .requires(source -> source.hasPermission(1)) // OP権限レベル2以上
                 .then(Commands.literal("get")
                         .executes(context -> {
                             ServerLevel world = context.getSource().getLevel();

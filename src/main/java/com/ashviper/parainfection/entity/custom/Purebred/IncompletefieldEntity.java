@@ -1,7 +1,8 @@
 package com.ashviper.parainfection.entity.custom.Purebred;
 
-import com.ashviper.parainfection.entity.ParainfectionEntities;
 import com.ashviper.parainfection.entity.goal.MoveTowardsSameEntityGoal;
+import com.ashviper.parainfection.regi.ParaInfectionMobs;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -72,25 +73,27 @@ public class IncompletefieldEntity extends Monster implements GeoEntity {
             double centerY = (this.getY() + nearby.get(0).getY() + nearby.get(1).getY() + nearby.get(2).getY()) / 4;
             double centerZ = (this.getZ() + nearby.get(0).getZ() + nearby.get(1).getZ() + nearby.get(2).getZ()) / 4;
 
-            // パーティクルの生成（爆発風）
-            for (int i = 0; i < 20; i++) {
-                double dx = random.nextGaussian() * 0.1;
-                double dy = random.nextGaussian() * 0.1;
-                double dz = random.nextGaussian() * 0.1;
-                level().addParticle(net.minecraft.core.particles.ParticleTypes.EXPLOSION,
-                        centerX, centerY + 0.5, centerZ, dx, dy, dz);
-            }
+            if (!level().isClientSide) {
+                var newEntity = ParaInfectionMobs.DEVELOPED_PLAGUELATCH.get().create(level());
+                if (newEntity != null) {
+                    newEntity.moveTo(centerX, centerY, centerZ, this.getYRot(), this.getXRot());
+                    level().addFreshEntity(newEntity);
+                }
 
-            var newEntity = ParainfectionEntities.GNAWLING.get().create(level());
-            if (newEntity != null) {
-                newEntity.moveTo(centerX, centerY, centerZ, this.getYRot(), this.getXRot());
-                level().addFreshEntity(newEntity);
-            }
+                this.discard();
+                nearby.get(0).discard();
+                nearby.get(1).discard();
+                nearby.get(2).discard();
 
-            this.discard();
-            nearby.get(0).discard();
-            nearby.get(1).discard();
-            nearby.get(2).discard();
+                // サーバーからクライアントにパーティクルを送信
+                ((ServerLevel) level()).sendParticles(
+                        net.minecraft.core.particles.ParticleTypes.EXPLOSION,
+                        centerX, centerY + 0.5, centerZ,
+                        20, // 数
+                        0.3, 0.3, 0.3, // spread
+                        0.1 // speed
+                );
+            }
         }
     }
 
